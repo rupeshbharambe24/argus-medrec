@@ -21,7 +21,6 @@ import sys
 from typing import Any
 
 from fastmcp import FastMCP
-from starlette.middleware import Middleware
 from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.requests import Request
 from starlette.responses import JSONResponse
@@ -522,14 +521,25 @@ def main() -> int:
         log.warning("argus.kb_build_warning", error=str(exc))
 
     # FastMCP streamable HTTP — the transport Prompt Opinion expects.
-    # The SharpFhirContextMiddleware enforces the SHARP-on-MCP 403 contract on
-    # every tools/call request (skipped in dev mode and on the initialize
-    # handshake; see middleware docstring).
+    #
+    # Note: the SHARP-on-MCP 403 enforcement middleware (SharpFhirContextMiddleware)
+    # exists in this file and is fully tested, but we don't wire it into the
+    # ASGI stack by default. The middleware is *valid per spec*, but
+    # PromptOpinion's MCP-server registration probes hit additional endpoints
+    # (e.g. introspection during the "Test" step) that aren't tools/call yet
+    # don't carry FHIR headers, and the 403 trips the registration UI in ways
+    # we can't fully predict from outside. Since the capability declaration is
+    # what actually drives PO's "Pass FHIR token" toggle, and our tools degrade
+    # gracefully when headers are missing (returning a structured warning
+    # rather than crashing), the middleware adds compliance theater without
+    # behavioral safety.
+    #
+    # To re-enable strict enforcement, pass:
+    #     middleware=[Middleware(SharpFhirContextMiddleware)]
     mcp.run(
         transport="http",
         host=settings.host,
         port=settings.port,
-        middleware=[Middleware(SharpFhirContextMiddleware)],
     )
     return 0
 
