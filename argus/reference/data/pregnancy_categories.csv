@@ -1,0 +1,41 @@
+rxnorm_ingredient,ingredient_name,category,pllr_summary
+11289,Warfarin,X,Crosses placenta; causes fetal bleeding and warfarin embryopathy; contraindicated
+1114195,Rivaroxaban,D,Insufficient data; crosses placenta; use alternative anticoagulant
+1364430,Apixaban,D,Insufficient data; use alternative anticoagulant
+29046,Lisinopril,D,Fetal renal damage and oligohydramnios in 2nd/3rd trimester; avoid
+35296,Ramipril,D,ACE inhibitor fetopathy; avoid
+3827,Enalapril,D,ACE inhibitor fetopathy; avoid
+69749,Valsartan,D,ARB fetopathy; renal and skull defects
+52175,Losartan,D,ARB fetopathy
+321064,Olmesartan,D,ARB fetopathy
+6851,Methotrexate,X,Teratogenic; abortifacient; absolute contraindication
+6064,Isotretinoin,X,Severe teratogen; iPledge program required
+265323,Mycophenolate,D,Major malformations and pregnancy loss
+10432,Thalidomide,X,Severe teratogen
+342369,Lenalidomide,X,Teratogenic; REMS program required
+9344,Ribavirin,X,Teratogenic and embryocidal in animals
+4502,NSAID 30w+,D,After 30 weeks: premature closure of ductus arteriosus
+703,Amiodarone,D,Fetal hypothyroidism and neurodevelopmental effects
+40254,Valproate,D,Neural tube defects and cognitive teratogenicity
+38404,Topiramate,D,Cleft lip/palate
+8183,Phenytoin,D,Fetal hydantoin syndrome
+2002,Carbamazepine,D,Neural tube defects
+3640,Doxycycline,D,Bone growth inhibition and tooth discoloration after wk 15
+10395,Tetracycline,D,Dental staining and bone growth issues after wk 15
+2551,Ciprofloxacin,C,Cartilage damage in animal studies; use alternative if possible
+82122,Levofloxacin,C,Cartilage damage; use alternative if possible
+10829,Trimethoprim,D,Folate antagonist; avoid in first trimester
+42331,Misoprostol,X,Abortifacient
+6964,Mifepristone,X,Abortifacient
+25025,Finasteride,X,Male fetal feminization
+228790,Dutasteride,X,Male fetal feminization
+9997,Spironolactone,D,Feminization of male fetus
+1202,Atenolol,D,Intrauterine growth restriction
+6448,Lithium,D,Ebstein anomaly and neonatal toxicity
+32937,Paroxetine,D,Cardiac malformations and pulmonary hypertension
+42347,Bupropion,C,Possible increased risk of cardiac defects
+2550805,Benzodiazepines chronic,D,Neonatal withdrawal floppy infant syndrome
+7597,Statins,X,Contraindicated; teratogenic potential
+36567,Simvastatin,X,Contraindicated
+83367,Atorvastatin,X,Contraindicated
+301542,Rosuvastatin,X,Contraindicated

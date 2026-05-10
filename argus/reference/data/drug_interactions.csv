@@ -1,0 +1,56 @@
+rxnorm_a,name_a,rxnorm_b,name_b,base_severity,mechanism,evidence_url
+11289,Warfarin,703,Amiodarone,major,Amiodarone inhibits CYP2C9 and CYP3A4 metabolism of warfarin increasing INR,https://dailymed.nlm.nih.gov/
+11289,Warfarin,2551,Ciprofloxacin,major,Ciprofloxacin inhibits warfarin metabolism increasing INR and bleeding risk,https://dailymed.nlm.nih.gov/
+11289,Warfarin,82122,Levofloxacin,major,Fluoroquinolones potentiate warfarin effect,https://dailymed.nlm.nih.gov/
+11289,Warfarin,21212,Clarithromycin,major,CYP3A4 inhibition increases warfarin exposure,https://dailymed.nlm.nih.gov/
+11289,Warfarin,18631,Azithromycin,moderate,Possible warfarin potentiation; monitor INR,https://dailymed.nlm.nih.gov/
+11289,Warfarin,1191,Aspirin,major,Additive bleeding risk with dual antithrombotic therapy,https://dailymed.nlm.nih.gov/
+11289,Warfarin,5640,Ibuprofen,major,NSAID bleeding risk plus warfarin potentiation,https://dailymed.nlm.nih.gov/
+11289,Warfarin,7258,Naproxen,major,NSAID bleeding risk plus warfarin potentiation,https://dailymed.nlm.nih.gov/
+11289,Warfarin,4450,Fluconazole,major,CYP2C9 inhibition dramatically increases INR,https://dailymed.nlm.nih.gov/
+10689,Tramadol,11289,Warfarin,moderate,Possible INR elevation,https://dailymed.nlm.nih.gov/
+1114195,Rivaroxaban,1191,Aspirin,major,Additive bleeding risk,https://dailymed.nlm.nih.gov/
+1191,Aspirin,1364430,Apixaban,major,Additive bleeding risk,https://dailymed.nlm.nih.gov/
+1114195,Rivaroxaban,21212,Clarithromycin,major,Strong CYP3A4/P-gp inhibition increases rivaroxaban exposure,https://dailymed.nlm.nih.gov/
+32968,Clopidogrel,7646,Omeprazole,moderate,CYP2C19 inhibition reduces clopidogrel activation,https://dailymed.nlm.nih.gov/
+32968,Clopidogrel,40790,Pantoprazole,minor,Pantoprazole has least CYP2C19 inhibition among PPIs,https://dailymed.nlm.nih.gov/
+36567,Simvastatin,703,Amiodarone,major,Amiodarone increases simvastatin levels rhabdomyolysis risk; limit simvastatin to 20 mg,https://dailymed.nlm.nih.gov/
+3407,Digoxin,703,Amiodarone,major,Amiodarone increases digoxin levels; reduce digoxin dose 50%,https://dailymed.nlm.nih.gov/
+21212,Clarithromycin,36567,Simvastatin,major,Strong CYP3A4 inhibition; avoid combination; rhabdomyolysis risk,https://dailymed.nlm.nih.gov/
+21212,Clarithromycin,83367,Atorvastatin,moderate,CYP3A4 inhibition; use lower atorvastatin dose,https://dailymed.nlm.nih.gov/
+36567,Simvastatin,4053,Erythromycin,major,CYP3A4 inhibition; avoid combination,https://dailymed.nlm.nih.gov/
+17767,Amlodipine,36567,Simvastatin,moderate,CYP3A4 inhibition; limit simvastatin to 20 mg,https://dailymed.nlm.nih.gov/
+3008,Cyclosporine,83367,Atorvastatin,major,Significant increase in statin exposure; avoid,https://dailymed.nlm.nih.gov/
+10689,Tramadol,321988,Escitalopram,major,Increased serotonin syndrome risk,https://dailymed.nlm.nih.gov/
+10689,Tramadol,36437,Sertraline,major,Increased serotonin syndrome risk,https://dailymed.nlm.nih.gov/
+321988,Escitalopram,36437,Sertraline,major,Multiple serotonergic agents; serotonin syndrome risk,https://dailymed.nlm.nih.gov/
+10689,Tramadol,39786,Venlafaxine,major,Serotonin syndrome risk,https://dailymed.nlm.nih.gov/
+321988,Escitalopram,4337,Fentanyl,moderate,Serotonin syndrome risk; monitor,https://dailymed.nlm.nih.gov/
+29046,Lisinopril,9997,Spironolactone,moderate,Additive hyperkalemia; monitor K+ and renal function,https://dailymed.nlm.nih.gov/
+29046,Lisinopril,52175,Losartan,major,Dual RAAS blockade; hyperkalemia renal failure; avoid,https://dailymed.nlm.nih.gov/
+29046,Lisinopril,8591,Potassium chloride,moderate,Hyperkalemia risk; monitor K+,https://dailymed.nlm.nih.gov/
+29046,Lisinopril,4603,Furosemide,moderate,Hypotension on initiation; hold diuretic or lower ACE dose first,https://dailymed.nlm.nih.gov/
+5956,Iohexol,6809,Metformin,major,Contrast-induced nephropathy can precipitate lactic acidosis; hold metformin 48h,https://dailymed.nlm.nih.gov/
+253182,Insulin,6918,Metoprolol,moderate,Beta-blockers mask hypoglycemia symptoms,https://dailymed.nlm.nih.gov/
+26225,Ondansetron,321988,Escitalopram,major,Additive QTc prolongation,https://dailymed.nlm.nih.gov/
+26225,Ondansetron,6813,Methadone,major,Additive QTc prolongation,https://dailymed.nlm.nih.gov/
+18631,Azithromycin,6813,Methadone,major,Additive QTc prolongation,https://dailymed.nlm.nih.gov/
+18631,Azithromycin,703,Amiodarone,major,Additive QTc prolongation; arrhythmia risk,https://dailymed.nlm.nih.gov/
+18631,Azithromycin,5093,Haloperidol,major,Additive QTc prolongation,https://dailymed.nlm.nih.gov/
+596,Alprazolam,7804,Oxycodone,major,Respiratory depression; CDC advises against combo,https://dailymed.nlm.nih.gov/
+6470,Lorazepam,7052,Morphine,major,Respiratory depression; CDC advises against combo,https://dailymed.nlm.nih.gov/
+10689,Tramadol,3322,Diazepam,major,Respiratory depression and serotonergic risk,https://dailymed.nlm.nih.gov/
+21212,Clarithromycin,3407,Digoxin,major,P-gp inhibition increases digoxin levels; toxicity risk,https://dailymed.nlm.nih.gov/
+11170,Verapamil,3407,Digoxin,major,Additive bradycardia and increased digoxin levels,https://dailymed.nlm.nih.gov/
+21212,Clarithromycin,42316,Tacrolimus,major,CYP3A4 inhibition; tacrolimus toxicity,https://dailymed.nlm.nih.gov/
+21212,Clarithromycin,3008,Cyclosporine,major,CYP3A4 inhibition; cyclosporine toxicity,https://dailymed.nlm.nih.gov/
+11289,Warfarin,36567,Simvastatin,minor,Possible mild INR elevation; monitor,https://dailymed.nlm.nih.gov/
+29046,Lisinopril,5640,Ibuprofen,moderate,NSAIDs reduce ACE-i efficacy and increase renal risk,https://dailymed.nlm.nih.gov/
+4603,Furosemide,5640,Ibuprofen,moderate,NSAIDs blunt diuretic effect,https://dailymed.nlm.nih.gov/
+10438,Theophylline,2551,Ciprofloxacin,major,CYP1A2 inhibition; theophylline toxicity,https://dailymed.nlm.nih.gov/
+1191,Aspirin,67108,Enoxaparin,moderate,Additive bleeding risk; monitor,https://dailymed.nlm.nih.gov/
+11289,Warfarin,67108,Enoxaparin,moderate,Overlap during transition; monitor,https://dailymed.nlm.nih.gov/
+3322,Diazepam,7052,Morphine,major,Respiratory depression,https://dailymed.nlm.nih.gov/
+11170,Verapamil,6918,Metoprolol,major,Bradycardia and heart block,https://dailymed.nlm.nih.gov/
+3443,Diltiazem,6918,Metoprolol,major,Bradycardia and heart block,https://dailymed.nlm.nih.gov/
+3498,Diphenhydramine,39993,Zolpidem,moderate,Additive sedation and fall risk,https://dailymed.nlm.nih.gov/

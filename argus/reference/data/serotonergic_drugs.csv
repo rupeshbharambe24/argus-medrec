@@ -1,0 +1,37 @@
+rxnorm_ingredient,ingredient_name,mechanism
+321988,Escitalopram,SSRI
+2556,Citalopram,SSRI
+36437,Sertraline,SSRI
+4493,Fluoxetine,SSRI
+32937,Paroxetine,SSRI
+42355,Fluvoxamine,SSRI
+39786,Venlafaxine,SNRI
+72625,Duloxetine,SNRI
+734064,Desvenlafaxine,SNRI
+15996,Mirtazapine,Tetracyclic (5HT2 antagonist)
+704,Amitriptyline,TCA
+7531,Nortriptyline,TCA
+3638,Doxepin,TCA
+2597,Clomipramine,TCA
+5691,Imipramine,TCA
+6011,Isocarboxazid,MAOI
+8123,Phenelzine,MAOI
+10734,Tranylcypromine,MAOI
+9639,Selegiline,MAOI-B
+10689,Tramadol,Opioid/SRI
+787390,Tapentadol,Opioid/NRI
+6754,Meperidine,Opioid with serotonergic activity
+3289,Dextromethorphan,SRI
+190376,Linezolid,MAOI (weak)
+6878,Methylene blue,MAOI (potent)
+26225,Ondansetron,5HT3 antagonist (weak risk)
+1827,Buspirone,5HT1A partial agonist
+10737,Trazodone,SRI/5HT2 antagonist
+1455099,Vortioxetine,Multimodal SRI
+1086769,Vilazodone,SSRI/5HT1A
+6448,Lithium,Serotonergic potentiator
+37418,Sumatriptan,5HT1 agonist
+88014,Rizatriptan,5HT1 agonist
+135775,Zolmitriptan,5HT1 agonist
+4337,Fentanyl,Opioid with serotonergic activity
+6813,Methadone,SRI activity

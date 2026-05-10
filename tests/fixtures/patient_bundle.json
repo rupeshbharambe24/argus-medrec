@@ -1,0 +1,187 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "test-patient-1",
+        "name": [{"given": ["Carlos"], "family": "Martinez"}],
+        "gender": "male",
+        "birthDate": "1943-09-12",
+        "address": [{"city": "Boston", "state": "MA"}]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-htn",
+        "subject": {"reference": "Patient/test-patient-1"},
+        "clinicalStatus": {"coding": [{"code": "active"}]},
+        "code": {
+          "text": "Essential hypertension",
+          "coding": [{"system": "http://snomed.info/sct", "code": "59621000", "display": "Essential hypertension"}]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-ckd-3b",
+        "subject": {"reference": "Patient/test-patient-1"},
+        "clinicalStatus": {"coding": [{"code": "active"}]},
+        "code": {
+          "text": "Chronic kidney disease stage 3b",
+          "coding": [{"system": "http://hl7.org/fhir/sid/icd-10", "code": "N18.32", "display": "CKD stage 3b"}]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-afib",
+        "subject": {"reference": "Patient/test-patient-1"},
+        "clinicalStatus": {"coding": [{"code": "active"}]},
+        "code": {
+          "text": "Atrial fibrillation",
+          "coding": [{"system": "http://hl7.org/fhir/sid/icd-10", "code": "I48.91", "display": "Atrial fibrillation"}]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-creatinine-1",
+        "status": "final",
+        "subject": {"reference": "Patient/test-patient-1"},
+        "code": {"coding": [{"system": "http://loinc.org", "code": "2160-0", "display": "Creatinine"}]},
+        "effectiveDateTime": "2026-04-10",
+        "valueQuantity": {"value": 2.1, "unit": "mg/dL"}
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-potassium-1",
+        "status": "final",
+        "subject": {"reference": "Patient/test-patient-1"},
+        "code": {"coding": [{"system": "http://loinc.org", "code": "6298-4", "display": "Potassium"}]},
+        "effectiveDateTime": "2026-04-10",
+        "valueQuantity": {"value": 3.3, "unit": "mEq/L"}
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-inr-1",
+        "status": "final",
+        "subject": {"reference": "Patient/test-patient-1"},
+        "code": {"coding": [{"system": "http://loinc.org", "code": "34714-6", "display": "INR"}]},
+        "effectiveDateTime": "2026-04-12",
+        "valueQuantity": {"value": 3.6, "unit": "{INR}"}
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "mr-warfarin",
+        "status": "active",
+        "intent": "order",
+        "subject": {"reference": "Patient/test-patient-1"},
+        "authoredOn": "2025-10-15",
+        "medicationCodeableConcept": {
+          "coding": [{"system": "http://www.nlm.nih.gov/research/umls/rxnorm", "code": "11289", "display": "Warfarin Sodium 5 MG Oral Tablet"}]
+        },
+        "dosageInstruction": [{
+          "text": "5 mg daily",
+          "route": {"coding": [{"display": "Oral"}]},
+          "doseAndRate": [{"doseQuantity": {"value": 5, "unit": "mg"}}]
+        }]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "mr-amiodarone",
+        "status": "active",
+        "intent": "order",
+        "subject": {"reference": "Patient/test-patient-1"},
+        "authoredOn": "2025-10-15",
+        "medicationCodeableConcept": {
+          "coding": [{"system": "http://www.nlm.nih.gov/research/umls/rxnorm", "code": "703", "display": "Amiodarone 200 MG Oral Tablet"}]
+        },
+        "dosageInstruction": [{
+          "text": "200 mg daily",
+          "route": {"coding": [{"display": "Oral"}]},
+          "doseAndRate": [{"doseQuantity": {"value": 200, "unit": "mg"}}]
+        }]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "mr-metformin",
+        "status": "active",
+        "intent": "order",
+        "subject": {"reference": "Patient/test-patient-1"},
+        "authoredOn": "2024-03-20",
+        "medicationCodeableConcept": {
+          "coding": [{"system": "http://www.nlm.nih.gov/research/umls/rxnorm", "code": "6809", "display": "Metformin 1000 MG Oral Tablet"}]
+        },
+        "dosageInstruction": [{
+          "text": "1000 mg twice daily",
+          "route": {"coding": [{"display": "Oral"}]},
+          "doseAndRate": [{"doseQuantity": {"value": 1000, "unit": "mg"}}]
+        }]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "mr-lisinopril",
+        "status": "active",
+        "intent": "order",
+        "subject": {"reference": "Patient/test-patient-1"},
+        "authoredOn": "2024-01-10",
+        "medicationCodeableConcept": {
+          "coding": [{"system": "http://www.nlm.nih.gov/research/umls/rxnorm", "code": "29046", "display": "Lisinopril 10 MG Oral Tablet"}]
+        },
+        "dosageInstruction": [{
+          "text": "10 mg daily",
+          "route": {"coding": [{"display": "Oral"}]},
+          "doseAndRate": [{"doseQuantity": {"value": 10, "unit": "mg"}}]
+        }]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "mr-diphenhydramine",
+        "status": "active",
+        "intent": "order",
+        "subject": {"reference": "Patient/test-patient-1"},
+        "authoredOn": "2026-01-03",
+        "medicationCodeableConcept": {
+          "coding": [{"system": "http://www.nlm.nih.gov/research/umls/rxnorm", "code": "3498", "display": "Diphenhydramine 50 MG"}]
+        },
+        "dosageInstruction": [{
+          "text": "50 mg at bedtime",
+          "route": {"coding": [{"display": "Oral"}]},
+          "doseAndRate": [{"doseQuantity": {"value": 50, "unit": "mg"}}]
+        }]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "ms-warfarin",
+        "status": "active",
+        "subject": {"reference": "Patient/test-patient-1"},
+        "dateAsserted": "2026-03-01",
+        "medicationCodeableConcept": {
+          "coding": [{"system": "http://www.nlm.nih.gov/research/umls/rxnorm", "code": "11289", "display": "Warfarin Sodium 5 MG"}]
+        }
+      }
+    }
+  ]
+}

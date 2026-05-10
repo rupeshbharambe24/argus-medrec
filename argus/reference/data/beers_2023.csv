@@ -1,0 +1,45 @@
+rxnorm_ingredient,ingredient_name,pim_category,rationale,alternative,severity
+3498,Diphenhydramine,Anticholinergic (first-gen antihistamine),Strong anticholinergic; sedation and fall risk in elderly,Second-gen antihistamine (loratadine) or non-drug sleep hygiene,moderate
+1767,Brompheniramine,Anticholinergic (first-gen antihistamine),Strong anticholinergic effects in elderly,Loratadine or cetirizine,moderate
+2400,Chlorpheniramine,Anticholinergic (first-gen antihistamine),Strong anticholinergic; confusion risk,Loratadine,moderate
+6676,Meclizine,Anticholinergic,Anticholinergic adverse effects in elderly,Non-pharm vestibular rehab,minor
+5553,Hydroxyzine,Anticholinergic,Anticholinergic; sedation,SSRI for anxiety; melatonin for sleep,moderate
+7454,Nitrofurantoin,Antimicrobial,Avoid when CrCl < 30; increased toxicity risk in elderly,Alternative UTI antibiotic with good renal clearance,moderate
+4815,Glyburide,Hypoglycemic,Prolonged hypoglycemia risk in elderly,Metformin or short-acting sulfonylurea,major
+2404,Chlorpropamide,Hypoglycemic,Prolonged hypoglycemia and SIADH risk,Metformin,major
+39993,Zolpidem,Sedative,Delirium falls and MVAs; minimize duration if used,CBT-I; melatonin; trazodone low-dose,moderate
+461016,Eszopiclone,Sedative,Delirium falls and MVAs,CBT-I,moderate
+74667,Zaleplon,Sedative,Delirium falls and MVAs,CBT-I,moderate
+704,Amitriptyline,TCA - anticholinergic,Strong anticholinergic; orthostatic hypotension,SSRI/SNRI; gabapentin for neuropathic pain,major
+7531,Nortriptyline,TCA - anticholinergic (lower),Preferred TCA if one must be used but still anticholinergic,SSRI/SNRI,moderate
+21949,Cyclobenzaprine,Muscle relaxant,Poorly tolerated; anticholinergic; sedation,Acetaminophen; PT,moderate
+6845,Methocarbamol,Muscle relaxant,Anticholinergic effects poorly tolerated,Acetaminophen; PT,moderate
+2101,Carisoprodol,Muscle relaxant,Abuse potential; metabolite is meprobamate,Acetaminophen; PT,moderate
+6754,Meperidine,Opioid,Neurotoxic metabolite accumulates in elderly,Alternative opioid (morphine oxycodone),major
+8001,Pentazocine,Opioid,CNS adverse effects; confusion and hallucinations,Alternative opioid,major
+49276,Doxazosin,Alpha-1 blocker,Orthostasis; fall risk; not recommended as HTN monotherapy,ACE-i ARB CCB thiazide,moderate
+37798,Terazosin,Alpha-1 blocker,Orthostasis,See above,moderate
+8629,Prazosin,Alpha-1 blocker,Orthostasis,Other antihypertensives,moderate
+2599,Clonidine,Alpha-2 agonist (as first-line HTN),Orthostasis syncope bradycardia,Alternative antihypertensive,major
+3541,Disopyramide,Antiarrhythmic,Strong anticholinergic; negative inotropy; avoid,Alternative antiarrhythmic,major
+233698,Dronedarone,Antiarrhythmic,Avoid in patients with permanent AF or HF,Rate control or alternative,moderate
+7417,Nifedipine IR,Calcium channel blocker (immediate release),Hypotension; myocardial ischemia risk,Long-acting CCB (amlodipine),major
+35827,Ketorolac,NSAID,GI bleed renal failure heart failure risk,Acetaminophen; topical NSAID,major
+898542,Aspirin high-dose,NSAID,GI bleed risk at high dose,Low-dose aspirin only if indicated,moderate
+5640,Ibuprofen,NSAID (chronic use),Chronic use associated with GI bleed renal failure,Acetaminophen; topical NSAID,moderate
+7258,Naproxen,NSAID (chronic use),Chronic use associated with GI bleed renal failure,Acetaminophen; topical NSAID,moderate
+5781,Indomethacin,NSAID,CNS adverse effects and greatest GI toxicity,Alternative NSAID or acetaminophen,major
+4100,Estrogen oral/patch,Hormone,Carcinogenic potential; stroke/VTE risk,Vaginal estrogen for GU symptoms only,moderate
+6703,Megestrol,Appetite stimulant,Minimal effect; thrombotic risk; mortality,Nutritional support; mirtazapine,moderate
+33738,Pioglitazone,Thiazolidinedione in HF,Avoid in HF; fluid retention,Alternative diabetes agent,major
+84108,Rosiglitazone,Thiazolidinedione in HF,Avoid in HF; fluid retention,Alternative diabetes agent,major
+1424,Benzotropine,Anticholinergic (Parkinson),Significant anticholinergic burden,Alternative Parkinsonian medication,moderate
+10811,Trihexyphenidyl,Anticholinergic (Parkinson),Significant anticholinergic burden,Alternative Parkinsonian medication,moderate
+8787,Propranolol (as first-line HTN),Beta-blocker,Crosses BBB; CNS effects,Selective beta-blocker if indicated,minor
+6918,Metoprolol,Beta-blocker - preferred,Cardioselective; preferred over nonselective,NA,minor
+9143,Ranitidine,H2-blocker (chronic),Cognitive effects with prolonged use,PPI short course; H. pylori testing,minor
+2541,Cimetidine,H2-blocker,Strong CYP inhibitor; many drug interactions,Famotidine or PPI,moderate
+8745,Promethazine,Phenothiazine antihistamine,Anticholinergic sedation,Ondansetron for nausea,moderate
+8704,Prochlorperazine,Phenothiazine,EPS; sedation,Ondansetron,moderate
+38685,Trimethobenzamide,Antiemetic,EPS; avoid,Ondansetron,moderate
+218069,Sulfonylurea long-acting,Hypoglycemic,Prolonged hypoglycemia risk,Short-acting SU or metformin,moderate

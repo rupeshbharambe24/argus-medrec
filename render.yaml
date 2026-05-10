@@ -1,0 +1,36 @@
+# Render.com — Argus MCP service definition
+#
+# Deploy: connect this repo to Render, click "New → Blueprint", and Render reads
+# this file. Free instance is enough for the demo (spins down after 15 min idle
+# with ~30s cold start on the next call).
+#
+# Docs: https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: argus-mcp
+    runtime: docker
+    region: singapore   # closest free region to India; change if needed
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /mcp
+    autoDeploy: true
+    envVars:
+      - key: ARGUS_HOST
+        value: 0.0.0.0
+      - key: ARGUS_PORT
+        value: "8080"
+      - key: ARGUS_ENV
+        value: prod
+      - key: ARGUS_LOG_LEVEL
+        value: INFO
+      - key: GEMINI_MODEL
+        value: gemini-2.5-flash-lite
+      - key: RXNAV_BASE_URL
+        value: https://rxnav.nlm.nih.gov/REST
+      - key: RXNAV_CACHE_TTL_DAYS
+        value: "7"
+      # Set this in the Render dashboard manually (Environment tab) — don't
+      # commit secrets here. Render's UI marks it as a secret automatically.
+      - key: GEMINI_API_KEY
+        sync: false

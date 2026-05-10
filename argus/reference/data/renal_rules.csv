@@ -1,0 +1,51 @@
+rxnorm_ingredient,ingredient_name,egfr_threshold,action,adjusted_dose_pattern,rationale,source
+6809,Metformin,45,REDUCE,500 mg daily,Maximum 1000 mg/day when eGFR 30-45; risk of lactic acidosis,FDA 2016 label
+6809,Metformin,30,AVOID,,Contraindicated below eGFR 30 due to lactic acidosis risk,FDA 2016 label
+67108,Enoxaparin,30,REDUCE,1 mg/kg daily,Reduce dose to once-daily regimen when CrCl < 30 mL/min,FDA label
+29046,Lisinopril,60,MONITOR,,Monitor K+ and Cr; start low and titrate slowly in CKD,KDIGO 2022
+25480,Gabapentin,60,REDUCE,300 mg daily,Reduce max total daily dose with declining renal function,FDA label
+25480,Gabapentin,30,REDUCE,200 mg daily,Further dose reduction required below eGFR 30,FDA label
+25480,Gabapentin,15,REDUCE,100 mg daily,Minimum dose only below eGFR 15,FDA label
+1202,Atenolol,30,REDUCE,25 mg daily,Reduce dose by 50% below eGFR 30,FDA label
+11289,Warfarin,30,MONITOR,,Increased bleeding risk in CKD; more frequent INR monitoring,Thromb Research 2019
+2551,Ciprofloxacin,50,REDUCE,500 mg q24h,Reduce to daily dosing below eGFR 50,FDA label
+2551,Ciprofloxacin,30,REDUCE,500 mg q24h,Reduce below eGFR 30,FDA label
+1191,Aspirin,30,MONITOR,,Low-dose typically continued; monitor for bleeding in advanced CKD,AHA guidelines
+82122,Levofloxacin,50,REDUCE,500 mg q24h,Reduce to daily dosing below eGFR 50,FDA label
+82122,Levofloxacin,20,REDUCE,500 mg q48h,Further reduction below eGFR 20,FDA label
+7052,Morphine,30,REDUCE,50% usual dose,Accumulation of active metabolite M6G; reduce dose or use alternative,Palliative Care J
+7258,Naproxen,60,AVOID,,NSAIDs can worsen renal function; avoid in CKD stage 3+,KDIGO 2022
+5640,Ibuprofen,60,AVOID,,NSAIDs can worsen renal function; avoid in CKD stage 3+,KDIGO 2022
+140587,Celecoxib,60,AVOID,,NSAIDs can worsen renal function; avoid in CKD stage 3+,KDIGO 2022
+41493,Meloxicam,60,AVOID,,NSAIDs can worsen renal function; avoid in CKD stage 3+,KDIGO 2022
+5487,Hydrochlorothiazide,30,AVOID,,Loses efficacy below eGFR 30; switch to loop diuretic,KDIGO 2022
+9997,Spironolactone,45,MONITOR,,Hyperkalemia risk; monitor K+ closely,FDA label
+9997,Spironolactone,30,AVOID,,Significant hyperkalemia risk; contraindicated,FDA label
+341248,Ezetimibe,30,MONITOR,,No dose adjustment needed but monitor,FDA label
+9143,Ranitidine,50,REDUCE,50% usual dose,Reduce dose when eGFR < 50,FDA label
+10689,Tramadol,30,REDUCE,50 mg q12h,Reduce dose and extend interval,FDA label
+187832,Pregabalin,60,REDUCE,75 mg daily,Dose reduction required,FDA label
+187832,Pregabalin,30,REDUCE,25 mg daily,Further reduction,FDA label
+117466,Tenofovir,50,MONITOR,,Renal monitoring required; switch to TAF if possible,HIV guidelines
+1114195,Rivaroxaban,50,REDUCE,15 mg daily,Reduce dose below eGFR 50 for non-valvular AF,FDA label
+1114195,Rivaroxaban,15,AVOID,,Avoid below eGFR 15,FDA label
+1364430,Apixaban,30,REDUCE,2.5 mg bid,Dose reduction criteria: 2 of (age 80+ serum cr 1.5+ weight 60kg-),FDA label
+1546356,Dabigatran,30,REDUCE,75 mg bid,Reduce for non-valvular AF,FDA label
+1546356,Dabigatran,15,AVOID,,Avoid,FDA label
+253182,Insulin,30,REDUCE,75% usual dose,Reduced insulin clearance; risk of hypoglycemia,KDIGO 2022
+4815,Glyburide,60,AVOID,,Prolonged hypoglycemia risk; avoid in CKD,Beers 2023
+593411,Sitagliptin,45,REDUCE,50 mg daily,Dose reduction,FDA label
+593411,Sitagliptin,30,REDUCE,25 mg daily,Further reduction,FDA label
+1100699,Linagliptin,30,NO_CHANGE,,No renal adjustment needed; preferred DPP-4 in CKD,FDA label
+1545653,Empagliflozin,45,AVOID,,Insufficient efficacy; not recommended below eGFR 45,FDA label
+519,Allopurinol,60,REDUCE,200 mg daily,Reduce dose to prevent hypersensitivity,FDA label
+519,Allopurinol,30,REDUCE,100 mg daily,Further reduction,FDA label
+281,Acyclovir,50,REDUCE,200 mg q8h,Reduce dose and/or extend interval,FDA label
+281,Acyclovir,25,REDUCE,200 mg q12h,Further reduction,FDA label
+7454,Nitrofurantoin,60,AVOID,,Insufficient urinary concentration; avoid below eGFR 60,Beers 2023
+3407,Digoxin,50,REDUCE,0.125 mg daily,Reduced clearance; risk of toxicity,FDA label
+4603,Furosemide,30,MONITOR,,Higher doses often needed in CKD; monitor volume status,KDIGO 2022
+39993,Zolpidem,30,REDUCE,5 mg qhs,Reduce starting dose,FDA label
+4278,Famotidine,50,REDUCE,20 mg daily,Dose adjustment when eGFR < 50,FDA label
+114477,Levetiracetam,80,REDUCE,500 mg q12h,Reduce per GFR bands,FDA label
+114477,Levetiracetam,30,REDUCE,250 mg q12h,Further reduction,FDA label

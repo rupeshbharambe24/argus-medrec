@@ -1,0 +1,26 @@
+# Build context exclusions for docker build
+.git
+.github
+.venv
+venv
+env
+__pycache__
+*.pyc
+.pytest_cache
+.ruff_cache
+.mypy_cache
+.coverage
+htmlcov
+tests
+docs
+scripts
+a2a_agent
+.env
+.env.*
+data/
+*.md
+!README.md
+Makefile
+.gitignore
+.dockerignore
+fly.toml

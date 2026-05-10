@@ -1,0 +1,44 @@
+app = "argus-mcp"
+primary_region = "bom"   # Mumbai — closest to Maharashtra; change as needed
+kill_signal = "SIGINT"
+kill_timeout = "10s"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  ARGUS_HOST = "0.0.0.0"
+  ARGUS_PORT = "8080"
+  ARGUS_ENV = "prod"
+  ARGUS_LOG_LEVEL = "INFO"
+  # flash-lite: 4x daily free-tier quota vs flash; override via secrets if needed
+  GEMINI_MODEL = "gemini-2.5-flash-lite"
+  RXNAV_BASE_URL = "https://rxnav.nlm.nih.gov/REST"
+  RXNAV_CACHE_TTL_DAYS = "7"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  # Keep the machine warm so PromptOpinion's first call after idle isn't a
+  # 30-second cold start. Costs negligible on Fly's free-tier shared CPU.
+  auto_stop_machines = false
+  auto_start_machines = true
+  min_machines_running = 1
+  processes = ["app"]
+
+# TCP probe on the listening port — FastMCP responds to POST /mcp, not GET /,
+# so an HTTP healthcheck on "/" would 404 and the machine would restart in a
+# loop. A TCP check confirms the server bound the port, which is enough.
+[[services]]
+  protocol = "tcp"
+  internal_port = 8080
+
+  [[services.tcp_checks]]
+    interval = "30s"
+    timeout = "5s"
+    grace_period = "15s"
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 1024
