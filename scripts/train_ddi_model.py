@@ -22,7 +22,6 @@ from pathlib import Path
 import numpy as np
 
 from argus.ml.ddi_severity import FEATURE_COLUMNS, SEVERITY_TO_SCORE
-from argus.schemas import Severity
 
 
 def _label_function(features: np.ndarray) -> np.ndarray:

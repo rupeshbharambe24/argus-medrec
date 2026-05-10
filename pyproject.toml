@@ -73,12 +73,17 @@ ignore = [
     "A002",    # argument shadowing builtin (format/schema are MCP contract names)
     "N801",    # Warning_ intentionally named to avoid shadowing builtin
     "N818",    # exception naming convention
-    "UP038",   # isinstance tuple syntax — keeps Python 3.10 compat posture
+    "UP042",   # `StrEnum` — keeping `str, Enum` for Pydantic compat & 3.11 floor
+    "SIM105",  # contextlib.suppress vs try/except/pass — equivalent, prefer explicit
+    "SIM118",  # `key in dict.keys()` — explicit form is fine for readability
 ]
 
 [tool.ruff.lint.per-file-ignores]
 "argus/server.py" = ["A002"]
 "tests/*" = ["N802"]
+# X/y are the standard sklearn convention for feature matrix / target vector.
+"scripts/train_ddi_model.py" = ["N806"]
+"argus/ml/*" = ["N806"]
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"

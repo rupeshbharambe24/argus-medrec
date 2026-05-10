@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 
-import pytest
-
 from argus.tools._common import (
     ckd_stage,
     egfr_ckd_epi_2021,

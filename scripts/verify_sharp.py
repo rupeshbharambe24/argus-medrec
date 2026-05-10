@@ -34,8 +34,10 @@ async def verify(url: str) -> int:
         "X-FHIR-Server-URL": "https://verify.local/fhir",
         "X-FHIR-Access-Token": "verify-script-dummy",
     }
-    async with streamablehttp_client(url, headers=headers) as (read, write, _):
-        async with ClientSession(read, write) as session:
+    async with (
+        streamablehttp_client(url, headers=headers) as (read, write, _),
+        ClientSession(read, write) as session,
+    ):
             init = await session.initialize()
 
             caps = init.capabilities

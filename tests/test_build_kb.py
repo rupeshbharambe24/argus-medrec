@@ -4,8 +4,6 @@ from __future__ import annotations
 
 import sqlite3
 
-import pytest
-
 
 class TestKnowledgeBase:
     def test_all_tables_exist(self, temp_kb_path):

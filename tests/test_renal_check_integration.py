@@ -2,14 +2,10 @@
 
 from __future__ import annotations
 
-import json
-
 import httpx
 import pytest
 
-from argus.fhir_client import FhirClient
 from argus.schemas import MedicationEntry, RenalCheckInput
-from argus.sharp_context import SharpContext
 from argus.tools.renal_check import run as run_renal
 
 
