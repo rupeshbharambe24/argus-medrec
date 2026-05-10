@@ -13,7 +13,9 @@ services:
     region: singapore   # closest free region to India; change if needed
     plan: free
     dockerfilePath: ./Dockerfile
-    healthCheckPath: /mcp
+    # No healthCheckPath — FastMCP only serves POST on /mcp, so an HTTP GET
+    # healthcheck would 404 and Render would mark the service unhealthy. Without
+    # this line Render falls back to a TCP port check, which is sufficient.
     autoDeploy: true
     envVars:
       - key: ARGUS_HOST
