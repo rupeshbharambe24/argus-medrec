@@ -1,7 +1,10 @@
-# syntax=docker/dockerfile:1.7
 # ============================================================================
 # Argus MCP Server — production image
 # ============================================================================
+# NOTE: do not add a `# syntax=docker/dockerfile:X.Y` pragma here — Render's
+# build environment has a known issue with the dockerfile frontend version
+# resolution that causes "frontend grpc server closed unexpectedly". The
+# default builder works fine for everything we use.
 
 FROM python:3.11-slim-bookworm AS builder
 
