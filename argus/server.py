@@ -173,21 +173,27 @@ REQUIRED_SHARP_HEADERS: tuple[str, ...] = (HEADER_FHIR_BASE_URL, HEADER_FHIR_TOK
 
 
 class SharpFhirContextMiddleware(BaseHTTPMiddleware):
-    """Reject tools/call requests missing the SHARP-on-MCP context headers.
+    """Reject `tools/call` requests missing the SHARP-on-MCP context headers.
 
     Per https://www.sharponmcp.com/key-components.html section 3:
         "If FHIR context is required and the client does not include one or
         more of the required headers, the MCP server should respond with a
         403 Forbidden response."
 
-    The MCP `initialize` handshake passes through unchecked because canonical
-    SHARP headers are part of per-call context, not session-level auth, and
-    PromptOpinion sends them only on follow-up calls. We use the presence of
-    `Mcp-Session-Id` to discriminate: if it's set, this is a follow-up call
-    and must carry the FHIR headers.
+    Important nuance: enforcement applies ONLY to ``tools/call`` requests, not
+    to discovery (``tools/list``, ``prompts/list``, etc.) or notifications
+    (``notifications/initialized``). PromptOpinion's MCP-server registration
+    flow performs `tools/list` after the initialize handshake — those calls
+    have a session id but legitimately do not need FHIR headers, since they
+    are not invoking a tool. Blocking them prevents PO from completing the
+    "Test" step of the registration dialog.
 
-    In dev mode (ARGUS_ENV=dev) enforcement is bypassed so local smoke tests
-    work without a real PromptOpinion in front.
+    To distinguish the JSON-RPC method we have to peek at the request body.
+    The body is consumed and re-injected via a custom ASGI receive callable
+    so the downstream MCP handler can still read it.
+
+    In dev mode (``ARGUS_ENV=dev``) enforcement is bypassed entirely so local
+    smoke tests work without a real PromptOpinion in front.
     """
 
     async def dispatch(self, request: Request, call_next):
@@ -197,8 +203,20 @@ class SharpFhirContextMiddleware(BaseHTTPMiddleware):
         if get_settings().env == "dev":
             return await call_next(request)
 
-        # Initialize requests have no Mcp-Session-Id yet; let them through.
-        if not request.headers.get("mcp-session-id"):
+        body = b""
+        try:
+            body = await request.body()
+        except Exception:  # noqa: BLE001
+            return await call_next(request)
+
+        # Re-inject the body so downstream handlers can still read it.
+        async def _receive() -> dict[str, Any]:
+            return {"type": "http.request", "body": body, "more_body": False}
+
+        request._receive = _receive  # type: ignore[attr-defined]
+
+        method = _peek_jsonrpc_method(body)
+        if method != "tools/call":
             return await call_next(request)
 
         missing = [h for h in REQUIRED_SHARP_HEADERS if not request.headers.get(h)]
@@ -206,6 +224,7 @@ class SharpFhirContextMiddleware(BaseHTTPMiddleware):
             log.warning(
                 "sharp.middleware.reject_403",
                 missing=missing,
+                method=method,
                 path=request.url.path,
             )
             return JSONResponse(
@@ -222,6 +241,35 @@ class SharpFhirContextMiddleware(BaseHTTPMiddleware):
                 },
             )
         return await call_next(request)
+
+
+def _peek_jsonrpc_method(body: bytes) -> str | None:
+    """Best-effort extraction of the JSON-RPC `method` field from a request body.
+
+    Returns None on parse error or if the field is missing — caller should
+    treat that as "non-tools/call" and let the request through unchallenged.
+    Handles both single requests and JSON-RPC batches (returns the first
+    method present, since MCP doesn't really mix tools/call with other
+    methods in a single batch).
+    """
+    if not body:
+        return None
+    try:
+        import json
+
+        payload = json.loads(body)
+    except Exception:  # noqa: BLE001
+        return None
+    if isinstance(payload, dict):
+        m = payload.get("method")
+        return m if isinstance(m, str) else None
+    if isinstance(payload, list):
+        for item in payload:
+            if isinstance(item, dict):
+                m = item.get("method")
+                if isinstance(m, str):
+                    return m
+    return None
 
 
 def _headers() -> dict[str, str]:
