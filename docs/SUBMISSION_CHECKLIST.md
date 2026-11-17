@@ -19,7 +19,7 @@ iwr https://fly.io/install.ps1 -useb | iex
 ### One-time setup
 
 ```powershell
-cd "D:\Projects\Agents Assemble\argus"
+cd argus-medrec   # repository root
 fly auth signup     # or: fly auth login (if you already have an account)
 ```
 
@@ -41,7 +41,7 @@ First deploy takes ~3-5 minutes (image build + push + boot). When it finishes, f
 
 ```powershell
 # Confirm SHARP capability is advertised by the deployed instance
-"D:/commonenv/Scripts/python.exe" scripts/verify_sharp.py https://argus-mcp.fly.dev/mcp
+python scripts/verify_sharp.py https://argus-mcp.fly.dev/mcp
 ```
 
 Expected: `[OK] PromptOpinion FHIR-context extension advertised (8 scopes).`

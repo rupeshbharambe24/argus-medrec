@@ -67,8 +67,8 @@ See `docs/ARCHITECTURE.md` for the full spec of each tool.
 
 ```bash
 # 1. Clone & install
-git clone <your-repo> argus
-cd argus
+git clone https://github.com/rupeshbharambe24/argus-medrec.git
+cd argus-medrec
 python -m venv .venv
 source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -e ".[dev]"
@@ -79,6 +79,8 @@ cp .env.example .env
 
 # 3. Build the reference knowledge base (one-time, ~10s)
 python -m argus.reference.build_kb
+# optional: train the DDI severity model (otherwise a heuristic fallback is used)
+python scripts/train_ddi_model.py --n-samples 20000
 
 # 4. Run the MCP server
 python -m argus.server
@@ -97,12 +99,12 @@ ngrok URL + `/mcp`. Enable the "Pass FHIR token" option so SHARP context propaga
 > ```bash
 > python scripts/verify_sharp.py http://127.0.0.1:8080/mcp
 > ```
-> Expected output: `[OK] SHARP-on-MCP capability advertised correctly`.
+> Expected output: `[OK] PromptOpinion FHIR-context extension advertised (...)`.
 
 ## Project layout
 
-```
-argus/
+```text
+argus-medrec/
 ├── argus/                  # Main package
 │   ├── server.py           # FastMCP entry point; registers tools
 │   ├── config.py           # Settings (pydantic-settings)
@@ -118,14 +120,14 @@ argus/
 │   │   ├── reconcile.py
 │   │   ├── generate_note.py
 │   │   └── screen_patterns.py
-│   ├── ml/                 # ML model wrappers + training artifacts
+│   ├── ml/                 # DDI severity model wrapper (artifacts are git-ignored; see scripts/train_ddi_model.py)
 │   └── reference/          # KB builder + seed data
 │       ├── build_kb.py
 │       └── data/
 ├── scripts/                # Operations — synthea gen, training, upload
 ├── tests/                  # pytest
 ├── a2a_agent/              # Separate submission — A2A agent wrapper
-├── docs/                   # ARCHITECTURE.md, SAFETY.md
+├── docs/                   # ARCHITECTURE, SAFETY, demo script, submission checklist
 ├── Dockerfile
 ├── fly.toml
 └── pyproject.toml
@@ -134,7 +136,7 @@ argus/
 ## Data
 
 Argus uses **only synthetic data** (Synthea-generated FHIR R4 Bundles). No real PHI ever
-touches the system. See `SAFETY.md`.
+touches the system. See [`docs/SAFETY.md`](docs/SAFETY.md).
 
 Generate a demo cohort:
 
@@ -158,7 +160,7 @@ Or any container platform — see `Dockerfile`.
 
 ```bash
 pytest                       # full suite
-pytest -k "test_rxnorm"      # one module
+pytest tests/test_schemas.py # one module
 pytest --cov=argus           # coverage
 ```
 
